@@ -48,7 +48,18 @@ services:
 networks:
   backend:
     driver: bridge
+    name: inception
 
 volumes:
   db-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/yq/data'
   wp-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/yq/data'
